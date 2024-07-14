@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html 
+	lang="zh_CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="referrer" content="no-referrer">
+		
+<link rel="stylesheet" href="/deps/css/mermaid.css">
+
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 图片下载改进版-批量下载 -  祺の小站</title>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		
+<script src="/js/mermaid-loader.js"></script>
+
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="祺の小站" type="application/atom+xml">
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/images/mmp139.png')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="祺の小站">
+        <img
+			src="/images/avatar.jpg"
+			alt="悦惜等风"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/avatar.jpg" title="悦惜等风">
+			<img
+				src="/images/avatar.jpg"
+				alt="悦惜等风"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>4</div>
+		<div><span>标签</span>3</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"
+			title="开往"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-trainhuochejiaotonggongju
+					"
+			></i>
+			<div class="kira-list-item-content">
+				开往
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://foreverblog.cn/go.html"
+			title="虫洞"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-Windmillfengchefengli
+					"
+			></i>
+			<div class="kira-list-item-content">
+				虫洞
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/html/person/index.html"
+			title="个人页"
+		>
+			<i
+				class="kirafont
+					
+						icon-diqiu1
+					"
+			></i>
+			<div class="kira-list-item-content">
+				个人页
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3199215217&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/1208053210"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/csn8/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://gitee.com/tge8"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">知识、技术</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">4</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">悦惜等风</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="/images/mmp38.png"
+				data-sizes="auto"
+				alt="图片下载改进版-批量下载"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>图片下载改进版-批量下载</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年07月03日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分钟</a>
+		</div>
+		<h3 id="高效批量下载文件：使用-Python-进行并行下载的实用教程"><a href="#高效批量下载文件：使用-Python-进行并行下载的实用教程" class="headerlink" title="高效批量下载文件：使用 Python 进行并行下载的实用教程"></a>高效批量下载文件：使用 Python 进行并行下载的实用教程</h3><p>上篇不是提取出非常多的链接了吗？这篇博文就是用那提取的链接来高效批量下载图片资源</p>
+<p>在处理大量文件下载任务时，效率和可靠性是两个至关重要的因素。无论你是在进行数据抓取、下载资源包还是管理大规模文件存储，确保文件下载的高效性和稳定性都是至关重要的。在这篇文章中，我们将介绍如何使用 Python 脚本实现高效的批量文件下载。我们将涵盖并行下载、错误处理、重试机制、进度显示等功能，帮助你轻松应对大规模文件下载任务。</p>
+<hr>
+<h4 id="1-需求背景"><a href="#1-需求背景" class="headerlink" title="1. 需求背景"></a>1. 需求背景</h4><p>在许多实际应用中，下载大量文件是常见的任务。比如：</p>
+<ul>
+<li><strong>数据科学家</strong>：从公开数据源批量下载数据集。</li>
+<li><strong>开发者</strong>：下载依赖包或资源文件。</li>
+<li><strong>内容管理员</strong>：获取大量的图片或视频文件。</li>
+</ul>
+<p>为了提高下载效率并确保文件完整性，我们需要一个能够处理多个文件下载的 Python 脚本，并具备错误处理、重试机制和进度显示功能。</p>
+<h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><p>以下是一个实现高效批量下载的 Python 脚本示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> urlparse<br><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm<br><span class="hljs-keyword">from</span> concurrent.futures <span class="hljs-keyword">import</span> ThreadPoolExecutor, as_completed<br><span class="hljs-keyword">from</span> requests.adapters <span class="hljs-keyword">import</span> HTTPAdapter<br><span class="hljs-keyword">from</span> requests.packages.urllib3.util.retry <span class="hljs-keyword">import</span> Retry<br><br><span class="hljs-comment"># 创建一个文件夹用于保存下载的文件</span><br>os.makedirs(<span class="hljs-string">&#x27;downloads&#x27;</span>, exist_ok=<span class="hljs-literal">True</span>)<br><br><span class="hljs-comment"># 从文件中读取要下载的文件链接列表</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">read_file_urls</span>(<span class="hljs-params">file_path</span>):<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_path, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        <span class="hljs-keyword">return</span> [line.strip() <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f <span class="hljs-keyword">if</span> line.strip()]<br><br><span class="hljs-comment"># 下载单个文件的函数（使用网站文件名作为本地文件名）</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download_file</span>(<span class="hljs-params">url</span>):<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 解析文件名</span><br>        parsed_url = urlparse(url)<br>        filename = os.path.basename(parsed_url.path)<br><br>        <span class="hljs-comment"># 拼接本地保存路径</span><br>        local_path = os.path.join(<span class="hljs-string">&#x27;downloads&#x27;</span>, filename)<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Downloading <span class="hljs-subst">&#123;url&#125;</span>...&#x27;</span>)<br>        <br>        <span class="hljs-comment"># 创建会话并挂载适配器</span><br>        session = requests.Session()<br>        retry_strategy = Retry(<br>            total=<span class="hljs-number">3</span>,<br>            status_forcelist=[<span class="hljs-number">429</span>, <span class="hljs-number">500</span>, <span class="hljs-number">502</span>, <span class="hljs-number">503</span>, <span class="hljs-number">504</span>],<br>        )<br>        adapter = HTTPAdapter(max_retries=retry_strategy)<br>        session.mount(<span class="hljs-string">&quot;https://&quot;</span>, adapter)<br>        session.mount(<span class="hljs-string">&quot;http://&quot;</span>, adapter)<br><br>        response = session.get(url, stream=<span class="hljs-literal">True</span>)<br>        total_size = <span class="hljs-built_in">int</span>(response.headers.get(<span class="hljs-string">&#x27;content-length&#x27;</span>, <span class="hljs-number">0</span>))<br><br>        <span class="hljs-comment"># 写入文件</span><br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(local_path, <span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>            <span class="hljs-keyword">with</span> tqdm(total=total_size, unit=<span class="hljs-string">&#x27;B&#x27;</span>, unit_scale=<span class="hljs-literal">True</span>, desc=os.path.basename(local_path), ncols=<span class="hljs-number">80</span>) <span class="hljs-keyword">as</span> pbar:<br>                <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> response.iter_content(chunk_size=<span class="hljs-number">1024</span>):<br>                    <span class="hljs-keyword">if</span> chunk:<br>                        f.write(chunk)<br>                        pbar.update(<span class="hljs-built_in">len</span>(chunk))<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Saved as <span class="hljs-subst">&#123;local_path&#125;</span>&#x27;</span>)<br>        <span class="hljs-keyword">return</span> local_path<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Failed to download <span class="hljs-subst">&#123;url&#125;</span>. Error: <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&#x27;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span><br><br><span class="hljs-comment"># 批量下载函数（并行、带错误处理、重试、缓存和断点续传）</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download_files</span>(<span class="hljs-params">file_urls</span>):<br>    <span class="hljs-keyword">with</span> ThreadPoolExecutor(max_workers=<span class="hljs-number">5</span>) <span class="hljs-keyword">as</span> executor:  <span class="hljs-comment"># 控制并发数</span><br>        futures = [executor.submit(download_file, url) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> file_urls]<br>        <span class="hljs-keyword">for</span> future <span class="hljs-keyword">in</span> as_completed(futures):<br>            result = future.result()<br>            <span class="hljs-keyword">if</span> result:<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Downloaded: <span class="hljs-subst">&#123;result&#125;</span>&#x27;</span>)<br><br><span class="hljs-comment"># 调用读取文件链接和并行下载函数</span><br>file_urls = read_file_urls(<span class="hljs-string">&#x27;links.txt&#x27;</span>)<br>download_files(file_urls)<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-代码解析"><a href="#3-代码解析" class="headerlink" title="3. 代码解析"></a>3. 代码解析</h4><p><strong>文件下载与保存</strong>：</p>
+<ul>
+<li><code>download_file</code> 函数负责下载单个文件。我们使用 <code>requests</code> 模块发送 GET 请求，并利用 <code>tqdm</code> 模块显示下载进度。</li>
+<li><code>os.path.basename(urlparse(url).path)</code> 提取文件名作为本地保存文件的名称。</li>
+<li>文件的下载过程中，通过检查响应头的 <code>content-length</code> 实现进度条的实时更新，并且将文件写入本地存储。</li>
+</ul>
+<p><strong>错误处理与重试机制</strong>：</p>
+<ul>
+<li>使用 <code>Retry</code> 类配置重试策略，当遇到 429（请求过多）、500（服务器错误）等 HTTP 状态码时，将自动重试最多 3 次。</li>
+</ul>
+<p><strong>并行下载</strong>：</p>
+<ul>
+<li><code>ThreadPoolExecutor</code> 实现了多线程并发下载，通过控制最大并发数（<code>max_workers=5</code>）来优化下载速度。</li>
+</ul>
+<p><strong>从文件中读取 URL 列表</strong>：</p>
+<ul>
+<li><code>read_file_urls</code> 函数从指定的文本文件中读取要下载的文件链接。</li>
+</ul>
+<h4 id="4-运行脚本"><a href="#4-运行脚本" class="headerlink" title="4. 运行脚本"></a>4. 运行脚本</h4><p>要运行这个脚本，请按照以下步骤操作：</p>
+<ol>
+<li><p>将脚本保存为 <code>download_files.py</code>。</p>
+</li>
+<li><p>确保在当前目录下有一个名为 <code>links.txt</code> 的文件，其中包含要下载的文件链接，每行一个。</p>
+</li>
+<li><p>打开终端（或命令提示符），导航到保存脚本的目录。</p>
+</li>
+<li><p>执行脚本：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python download_files.py<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>脚本将开始下载 <code>links.txt</code> 文件中列出的所有文件，并将它们保存在 <code>downloads</code> 文件夹中。</p>
+</li>
+</ol>
+<h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h4><p>通过上述代码和教程，你可以轻松地实现高效的批量文件下载。无论你需要下载多少文件，这个脚本都能够处理并行下载、错误处理、重试机制和进度显示等功能，确保下载过程的顺利进行。希望这个教程对你有所帮助，如果你有任何问题或改进建议，请在评论中留言，我们非常期待你的反馈！</p>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>悦惜等风<br>
+        <strong>本文链接：</strong><a href="https://xlfz.eu.org/post/a15c3n.html" title="https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;a15c3n.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;a15c3n.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" rel="tag">知识、技术</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		
+    <div class="livere-card card" data-aos="fade-up">
+      <!-- 来必力City版安装代码 -->
+      <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk1Mi8zNjQxNQ==">
+        <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+            if (typeof LivereTower === 'function') { return; }
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+      </div>
+      <!-- City版安装代码已完成 -->
+    </div>
+    
+    
+    <!-- 添加CSS样式来隐藏广告板块 -->
+    <style>
+      .trc_rbox_outer {
+        display: none;
+      }
+      .trc_rbox_header.trc_rbox_border_elm {
+        display: none;
+      }
+    </style>    
+	</div>
+	
+</div>
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<!-- 回到顶部按钮 -->
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+	  <button class="mdui-fab mdui-ripple">
+		<i class="kirafont icon-caret-up"></i>
+	  </button>
+	</a>
+	</div>
+  
+		</div>
+	</body>
+</html>

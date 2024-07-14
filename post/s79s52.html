@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html 
+	lang="zh_CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="referrer" content="no-referrer">
+		
+<link rel="stylesheet" href="/deps/css/mermaid.css">
+
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> FFmpeg 安装与使用教程 -  祺の小站</title>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		
+<script src="/js/mermaid-loader.js"></script>
+
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="祺の小站" type="application/atom+xml">
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/images/mmp139.png')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="祺の小站">
+        <img
+			src="/images/avatar.jpg"
+			alt="悦惜等风"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/avatar.jpg" title="悦惜等风">
+			<img
+				src="/images/avatar.jpg"
+				alt="悦惜等风"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>4</div>
+		<div><span>标签</span>3</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"
+			title="开往"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-trainhuochejiaotonggongju
+					"
+			></i>
+			<div class="kira-list-item-content">
+				开往
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://foreverblog.cn/go.html"
+			title="虫洞"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-Windmillfengchefengli
+					"
+			></i>
+			<div class="kira-list-item-content">
+				虫洞
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/html/person/index.html"
+			title="个人页"
+		>
+			<i
+				class="kirafont
+					
+						icon-diqiu1
+					"
+			></i>
+			<div class="kira-list-item-content">
+				个人页
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3199215217&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/1208053210"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/csn8/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://gitee.com/tge8"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">知识、技术</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">4</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">悦惜等风</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="/images/mmp57.png"
+				data-sizes="auto"
+				alt="FFmpeg 安装与使用教程"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>FFmpeg 安装与使用教程</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年06月29日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.6k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
+		</div>
+		<p>FFmpeg 是一个强大的多媒体处理工具，可以用于音视频的录制、转换和流播。它支持几乎所有流行的音视频格式和编解码器。本文将介绍如何在不同操作系统上安装 FFmpeg 以及一些常见的使用示例。</p>
+<h2 id="安装-FFmpeg"><a href="#安装-FFmpeg" class="headerlink" title="安装 FFmpeg"></a>安装 FFmpeg</h2><h3 id="Windows-安装"><a href="#Windows-安装" class="headerlink" title="Windows 安装"></a>Windows 安装</h3><ul>
+<li>访问 <a target="_blank" rel="noopener" href="https://ffmpeg.org/download.html">FFmpeg 官方网站</a>，下载适用于 Windows 的 FFmpeg 压缩包。</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170932679.png" alt="第一步" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170934973.png" alt="第二步" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170935521.png" alt="第三步" class="lazyload"></p>
+<ul>
+<li>解压下载的压缩包，将其放在一个方便访问的位置（例如：<code>D:\ffmpeg-7.0.1</code>）。</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170937210.png" alt="解压记录位置" class="lazyload"></p>
+<ul>
+<li>将 FFmpeg 的 <code>bin</code> 目录添加到系统的环境变量中：</li>
+</ul>
+<p>​	右键点击“此电脑”，选择“属性”。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170938574.png" alt="属性" class="lazyload"></p>
+<ul>
+<li>点击“高级系统设置”，然后点击“环境变量”。</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170940171.png" alt="高级系统设置" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170941544.png" alt="环境变量" class="lazyload"></p>
+<ul>
+<li>在“系统变量”部分，找到并选中“Path”，然后点击“编辑”。</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170942825.png" alt="系统变量" class="lazyload"></p>
+<ul>
+<li>点击“新建”，输入 FFmpeg 的 <code>bin</code> 目录路径，例如 <code>D:\ffmpeg-7.0.1\bin</code>，然后点击“确定”。</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://gitee.com/tge8/img/raw/master/typora-picture/202406170944301.png" alt="环境变量" class="lazyload"></p>
+<ul>
+<li><strong>流程图：Windows 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[下载 FFmpeg] --> B[解压文件]
+B --> C[将 FFmpeg 放到 D:\ffmpeg-7.0.1]
+C --> D[添加 FFmpeg 到环境变量]</pre>
+
+<h3 id="macOS-安装（macOS安装图略）"><a href="#macOS-安装（macOS安装图略）" class="headerlink" title="macOS 安装（macOS安装图略）"></a>macOS 安装（macOS安装图略）</h3><ul>
+<li>在 macOS 上，你可以使用 Homebrew 来安装 FFmpeg：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install ffmpeg<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果你还没有安装 Homebrew，可以先在终端中执行以下命令来安装 Homebrew：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/bin/bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：macOS 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[安装 Homebrew] --> B[运行 brew install ffmpeg]</pre>
+
+<h3 id="Linux-安装（安装图略）"><a href="#Linux-安装（安装图略）" class="headerlink" title="Linux 安装（安装图略）"></a>Linux 安装（安装图略）</h3><ul>
+<li>在大多数 Linux 发行版上，你可以使用包管理器来安装 FFmpeg。</li>
+</ul>
+<p>​	对于 Debian&#x2F;Ubuntu 系列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br>sudo apt install ffmpeg<br></code></pre></td></tr></table></figure>
+
+<p>​	对于 CentOS&#x2F;RHEL 系列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum install epel-release<br>sudo yum install ffmpeg<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：Linux 安装 FFmpeg</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[运行 sudo apt/yum install ffmpeg] --> B[安装完成]</pre>
+
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><ul>
+<li>安装完成后，你可以通过在终端或命令提示符中输入以下命令来验证 FFmpeg 是否安装成功：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -version<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果成功安装，你会看到 FFmpeg 的版本信息和编译配置。</p>
+</li>
+<li><p><strong>流程图：验证安装</strong></p>
+</li>
+</ul>
+<pre class="mermaid">graph LR
+A[运行 ffmpeg -version] --> B[显示版本信息]</pre>
+
+<h2 id="使用-FFmpeg"><a href="#使用-FFmpeg" class="headerlink" title="使用 FFmpeg"></a>使用 FFmpeg</h2><ul>
+<li>FFmpeg 的命令行工具非常强大，下面是一些常见的使用示例。</li>
+</ul>
+<h3 id="转换视频格式"><a href="#转换视频格式" class="headerlink" title="转换视频格式"></a>转换视频格式</h3><ul>
+<li>将一个 MP4 文件转换为 AVI 格式：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 output.avi<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：转换视频格式</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入 MP4 文件] --> B[运行转换命令]
+B --> C[输出 AVI 文件]</pre>
+
+<h3 id="提取音频"><a href="#提取音频" class="headerlink" title="提取音频"></a>提取音频</h3><ul>
+<li>从视频文件中提取音频，并保存为 MP3 格式：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -q:a 0 -map a output.mp3<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：提取音频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行提取命令]
+B --> C[输出音频文件]</pre>
+
+<h3 id="合并视频文件"><a href="#合并视频文件" class="headerlink" title="合并视频文件"></a>合并视频文件</h3><ul>
+<li><p>将多个视频文件合并为一个文件：</p>
+<p>首先，创建一个文本文件 <code>filelist.txt</code>，内容如下：</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">file &#x27;input1.mp4&#x27;<br>file &#x27;input2.mp4&#x27;<br>file &#x27;input3.mp4&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>​	然后使用以下命令合并视频文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -f concat -safe 0 -i filelist.txt -c copy output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：合并视频文件</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[创建文件列表] --> B[运行合并命令]
+B --> C[输出合并文件]</pre>
+
+<h3 id="调整视频分辨率"><a href="#调整视频分辨率" class="headerlink" title="调整视频分辨率"></a>调整视频分辨率</h3><ul>
+<li>将视频文件调整为 1280x720 分辨率：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：调整视频分辨率</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行调整命令]
+B --> C[输出调整文件]</pre>
+
+<h3 id="剪辑视频"><a href="#剪辑视频" class="headerlink" title="剪辑视频"></a>剪辑视频</h3><ul>
+<li>剪辑视频从 00:01:00 开始，持续 30 秒：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -ss 00:01:00 -t 30 -c copy output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：剪辑视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[设置起始时间和持续时间]
+B --> C[输出剪辑文件]</pre>
+
+<h3 id="添加水印"><a href="#添加水印" class="headerlink" title="添加水印"></a>添加水印</h3><ul>
+<li>在视频上添加一个图片水印（位置在右上角）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -i watermark.png -filter_complex <span class="hljs-string">&quot;overlay=W-w-10:10&quot;</span> output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：添加水印</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和水印图片] --> B[运行添加水印命令]
+B --> C[输出带水印文件]</pre>
+
+<h3 id="压缩视频"><a href="#压缩视频" class="headerlink" title="压缩视频"></a>压缩视频</h3><ul>
+<li>使用 H.264 编码压缩视频：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：压缩视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行压缩命令]
+B --> C[输出压缩文件]</pre>
+
+<h3 id="创建-GIF"><a href="#创建-GIF" class="headerlink" title="创建 GIF"></a>创建 GIF</h3><ul>
+<li>从视频中创建 GIF 动画：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -vf <span class="hljs-string">&quot;fps=10,scale=320:-1:flags=lanczos&quot;</span> output.gif<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：创建 GIF</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行创建 GIF 命令]
+B --> C[输出 GIF 文件]</pre>
+
+<h3 id="分离音视频"><a href="#分离音视频" class="headerlink" title="分离音视频"></a>分离音视频</h3><ul>
+<li>将视频和音频分离为两个文件：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -an -vcodec copy video.mp4<br>ffmpeg -i input.mp4 -vn -acodec copy audio.mp3<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：分离音视频</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[分离视频命令]
+B --> C[输出视频文件]
+A --> D[分离音频命令]
+D --> E[输出音频文件]</pre>
+
+<h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h3 id="添加字幕"><a href="#添加字幕" class="headerlink" title="添加字幕"></a>添加字幕</h3><ul>
+<li>将 SRT 字幕文件添加到视频中：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -vf subtitles=subtitles.srt output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：添加字幕</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和字幕文件] --> B[运行添加字幕命令]
+B --> C[输出带字幕文件]</pre>
+
+<h3 id="制作缩略图"><a href="#制作缩略图" class="headerlink" title="制作缩略图"></a>制作缩略图</h3><ul>
+<li>从视频中提取缩略图（在第 10 秒）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -ss 00:00:10 -vframes 1 thumbnail.png<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：制作缩略图</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件] --> B[运行提取缩略图命令]
+B --> C[输出缩略图文件]</pre>
+
+<h3 id="添加音效"><a href="#添加音效" class="headerlink" title="添加音效"></a>添加音效</h3><ul>
+<li>将音频文件添加到视频中：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.mp4 -i background.mp3 -c:v copy -c:a aac -strict experimental output.mp4<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>流程图：添加音效</strong></li>
+</ul>
+<pre class="mermaid">graph LR
+A[输入视频文件和音频文件] --> B[运行添加音效命令]
+B --> C[输出带音效文件]</pre>
+
+<h2 id="FFmpeg-常用参数"><a href="#FFmpeg-常用参数" class="headerlink" title="FFmpeg 常用参数"></a>FFmpeg 常用参数</h2><ul>
+<li><code>-i</code>：输入文件。</li>
+<li><code>-vf</code>：视频滤镜。</li>
+<li><code>-af</code>：音频滤镜。</li>
+<li><code>-c:v</code>：视频编码器。</li>
+<li><code>-c:a</code>：音频编码器。</li>
+<li><code>-b:v</code>：视频比特率。</li>
+<li><code>-b:a</code>：音频比特率。</li>
+<li><code>-r</code>：帧率。</li>
+<li><code>-s</code>：分辨率。</li>
+<li><code>-ss</code>：开始时间。</li>
+<li><code>-t</code>：持续时间。</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
+<li><p>FFmpeg 是一个功能强大且灵活的多媒体处理工具，掌握它可以让你在</p>
+</li>
+<li><p>音视频处理方面如虎添翼。希望这篇教程能帮助你入门 FFmpeg，并能够在日常工作中熟练使用它。</p>
+</li>
+<li><p>如果你遇到任何问题或有更多的需求，FFmpeg 的<a target="_blank" rel="noopener" href="https://ffmpeg.org/documentation.html">官方文档</a>是一个非常好的资源，里面有详尽的参数解释和使用示例。</p>
+</li>
+</ul>
+<hr>
+<p><strong>声明</strong>：此教程仅供学习使用，请遵守相关法律法规和网站的使用条款，不要将此脚本用于非法用途或商业获利。如因不当使用引起的任何法律问题，作者不承担任何责任。</p>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>悦惜等风<br>
+        <strong>本文链接：</strong><a href="https://xlfz.eu.org/post/s79s52.html" title="https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;s79s52.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;s79s52.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" rel="tag">知识、技术</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		
+    <div class="livere-card card" data-aos="fade-up">
+      <!-- 来必力City版安装代码 -->
+      <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk1Mi8zNjQxNQ==">
+        <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+            if (typeof LivereTower === 'function') { return; }
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+      </div>
+      <!-- City版安装代码已完成 -->
+    </div>
+    
+    
+    <!-- 添加CSS样式来隐藏广告板块 -->
+    <style>
+      .trc_rbox_outer {
+        display: none;
+      }
+      .trc_rbox_header.trc_rbox_border_elm {
+        display: none;
+      }
+    </style>    
+	</div>
+	
+</div>
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<!-- 回到顶部按钮 -->
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+	  <button class="mdui-fab mdui-ripple">
+		<i class="kirafont icon-caret-up"></i>
+	  </button>
+	</a>
+	</div>
+  
+		</div>
+	</body>
+</html>

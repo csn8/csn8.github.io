@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html 
+	lang="zh_CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="referrer" content="no-referrer">
+		
+<link rel="stylesheet" href="/deps/css/mermaid.css">
+
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 图片下载改进版-提取链接 -  祺の小站</title>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		
+<script src="/js/mermaid-loader.js"></script>
+
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="祺の小站" type="application/atom+xml">
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/images/mmp139.png')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="祺の小站">
+        <img
+			src="/images/avatar.jpg"
+			alt="悦惜等风"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/avatar.jpg" title="悦惜等风">
+			<img
+				src="/images/avatar.jpg"
+				alt="悦惜等风"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>4</div>
+		<div><span>标签</span>3</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"
+			title="开往"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-trainhuochejiaotonggongju
+					"
+			></i>
+			<div class="kira-list-item-content">
+				开往
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://foreverblog.cn/go.html"
+			title="虫洞"
+		>
+			<i
+				class="kirafont
+					
+						icon-a-Windmillfengchefengli
+					"
+			></i>
+			<div class="kira-list-item-content">
+				虫洞
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/html/person/index.html"
+			title="个人页"
+		>
+			<i
+				class="kirafont
+					
+						icon-diqiu1
+					"
+			></i>
+			<div class="kira-list-item-content">
+				个人页
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3199215217&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/1208053210"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/csn8/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://gitee.com/tge8"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">知识、技术</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">4</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">悦惜等风</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="/images/mmp3.png"
+				data-sizes="auto"
+				alt="图片下载改进版-提取链接"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>图片下载改进版-提取链接</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年07月03日</a>
+			<a><i class="kirafont icon-edit-fill"></i>898 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+		</div>
+		<p>由于我知道一些网站图片具体地址的链接，我就想把这些链接都提取出来保存在txt文本中，然后再利用这些链接批量下载文件！</p>
+<p>下面是一个关于如何使用 Python 生成一系列链接并将它们保存到文本文件中的博客教程。这个教程包括了如何编写代码、解释每个步骤的作用以及如何运行脚本。你可以根据需要对教程进行调整和扩展。</p>
+<hr>
+<h2 id="如何使用-Python-生成并保存链接列表"><a href="#如何使用-Python-生成并保存链接列表" class="headerlink" title="如何使用 Python 生成并保存链接列表"></a>如何使用 Python 生成并保存链接列表</h2><p>在这个教程中，我们将介绍如何使用 Python 生成一系列 URL 链接，并将这些链接保存到一个文本文件中。这个过程包括三个主要步骤：</p>
+<ol>
+<li><strong>生成链接列表</strong>：根据模板 URL 和指定的范围生成一系列链接。</li>
+<li><strong>保存链接到文本文件</strong>：将生成的链接保存到一个文本文件中。</li>
+<li><strong>运行 Python 脚本</strong>：运行脚本来完成上述操作。</li>
+</ol>
+<h3 id="1-编写-Python-脚本"><a href="#1-编写-Python-脚本" class="headerlink" title="1. 编写 Python 脚本"></a>1. 编写 Python 脚本</h3><p>首先，我们需要编写一个 Python 脚本来完成我们的任务。以下是一个示例脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">generate_links</span>(<span class="hljs-params">template_url, start, end</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    根据模板 URL 和指定的范围生成一系列链接。</span><br><span class="hljs-string"></span><br><span class="hljs-string">    :param template_url: URL 模板，其中的占位符将被替换为实际的图片编号</span><br><span class="hljs-string">    :param start: 起始编号</span><br><span class="hljs-string">    :param end: 结束编号</span><br><span class="hljs-string">    :return: 链接列表</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    links = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(start, end + <span class="hljs-number">1</span>):<br>        <span class="hljs-comment"># 替换 URL 中的占位符</span><br>        link = template_url.replace(<span class="hljs-string">&quot;img1&quot;</span>, <span class="hljs-string">f&quot;img<span class="hljs-subst">&#123;i&#125;</span>&quot;</span>)<br>        links.append(link)<br>    <span class="hljs-keyword">return</span> links<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">save_links_to_txt</span>(<span class="hljs-params">links, file_path</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    将链接列表保存到文本文件中。</span><br><span class="hljs-string"></span><br><span class="hljs-string">    :param links: 链接列表</span><br><span class="hljs-string">    :param file_path: 文件路径</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_path, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>        <span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> links:<br>            file.write(link + <span class="hljs-string">&#x27;\n&#x27;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment"># URL 模板，其中 &quot;img1&quot; 是占位符</span><br>    template_url = <span class="hljs-string">&#x27;https://img.loliapi.com/i/pc/img1.webp&#x27;</span><br>    <span class="hljs-comment"># 链接的编号范围</span><br>    start = <span class="hljs-number">1</span><br>    end = <span class="hljs-number">697</span><br><br>    <span class="hljs-comment"># 生成链接</span><br>    links = generate_links(template_url, start, end)<br>    <span class="hljs-comment"># 将链接保存到文件</span><br>    save_links_to_txt(links, <span class="hljs-string">&#x27;links.txt&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-代码详解"><a href="#2-代码详解" class="headerlink" title="2. 代码详解"></a>2. 代码详解</h3><ul>
+<li><p><strong><code>generate_links</code> 函数</strong>：</p>
+<ul>
+<li>这个函数接受一个模板 URL 和一个编号范围，生成一系列链接。</li>
+<li>使用 <code>str.replace()</code> 方法将模板 URL 中的占位符 <code>img1</code> 替换为实际的图片编号 <code>img&#123;i&#125;</code>。</li>
+<li>返回包含所有链接的列表。</li>
+</ul>
+</li>
+<li><p><strong><code>save_links_to_txt</code> 函数</strong>：</p>
+<ul>
+<li>这个函数将生成的链接列表保存到一个文本文件中。</li>
+<li>使用 <code>with open(file_path, &#39;w&#39;)</code> 打开文件，并将每个链接写入文件，每个链接后跟一个换行符。</li>
+</ul>
+</li>
+<li><p><strong><code>main</code> 函数</strong>：</p>
+<ul>
+<li>定义了 URL 模板和链接的编号范围。</li>
+<li>调用 <code>generate_links</code> 函数生成链接列表。</li>
+<li>调用 <code>save_links_to_txt</code> 函数将链接保存到 <code>links.txt</code> 文件中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-运行-Python-脚本"><a href="#3-运行-Python-脚本" class="headerlink" title="3. 运行 Python 脚本"></a>3. 运行 Python 脚本</h3><p>要运行这个脚本，请按照以下步骤操作：</p>
+<ol>
+<li><p>将脚本保存为 <code>generate_links.py</code> 文件。</p>
+</li>
+<li><p>打开终端（或命令提示符）。</p>
+</li>
+<li><p>导航到保存脚本的目录。</p>
+</li>
+<li><p>运行脚本：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python generate_links.py<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>脚本运行完成后，你将在当前目录下找到一个名为 <code>links.txt</code> 的文件，其中包含了所有生成的链接。</p>
+</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>通过这个教程，你已经学会了如何使用 Python 生成链接并将它们保存到文本文件中。这种技术可以应用于各种需要生成链接列表的场景，比如下载图片、处理数据等。希望这个教程对你有所帮助，如果有任何问题或需要进一步的帮助，请随时联系我！</p>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>悦惜等风<br>
+        <strong>本文链接：</strong><a href="https://xlfz.eu.org/post/c4s25d.html" title="https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;c4s25d.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;xlfz.eu.org&#x2F;post&#x2F;c4s25d.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E3%80%81%E6%8A%80%E6%9C%AF/" rel="tag">知识、技术</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		
+    <div class="livere-card card" data-aos="fade-up">
+      <!-- 来必力City版安装代码 -->
+      <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk1Mi8zNjQxNQ==">
+        <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+            if (typeof LivereTower === 'function') { return; }
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+      </div>
+      <!-- City版安装代码已完成 -->
+    </div>
+    
+    
+    <!-- 添加CSS样式来隐藏广告板块 -->
+    <style>
+      .trc_rbox_outer {
+        display: none;
+      }
+      .trc_rbox_header.trc_rbox_border_elm {
+        display: none;
+      }
+    </style>    
+	</div>
+	
+</div>
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<!-- 回到顶部按钮 -->
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+	  <button class="mdui-fab mdui-ripple">
+		<i class="kirafont icon-caret-up"></i>
+	  </button>
+	</a>
+	</div>
+  
+		</div>
+	</body>
+</html>
